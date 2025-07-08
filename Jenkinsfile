@@ -1,0 +1,41 @@
+pipeline {
+
+  agent any
+
+  stages {
+
+    stage('Checkout') {
+
+      steps {
+
+        git branch: 'main', 
+
+        url: 'https://github.com/TocDX/source-maven-java-spring-hello-webapp'
+
+      }
+
+    }
+
+    stage('Build') {
+
+      steps {
+
+        sh 'mvn clean package'
+
+      }
+
+    }
+
+    stage('Deploy') {
+
+      steps {
+
+        deploy adapters: [tomcat9(credentialsId: 'jenkins', url: 'http://192.168.56.102:8080')], contextPath: null, war: 'path/to/war'
+
+      }
+
+    }
+
+  }
+
+}
