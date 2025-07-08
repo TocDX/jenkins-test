@@ -30,7 +30,7 @@ pipeline {
 
       steps {
 
-        deploy adapters: [tomcat9(credentialsId: 'jenkins', url: 'http://192.168.56.102:8080')], contextPath: null, war: 'path/to/war'
+        deploy adapters: [tomcat9(credentialsId: 'jenkins', url: 'http://192.168.56.102:8080')], contextPath: null, war: 'target/hello-world.war'
 
       }
 
