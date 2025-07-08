@@ -10,7 +10,7 @@ pipeline {
 
         git branch: 'main', 
 
-        url: 'https://github.com/TocDX/jenkins-test.git'
+        url: 'https://github.com/TocDX/source-maven-java-spring-hello-webapp.git'
 
       }
 
